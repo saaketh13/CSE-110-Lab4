@@ -26,7 +26,7 @@ export class ResultsScreenController extends ScreenController {
 		this.view = new ResultsScreenView(() => this.handlePlayAgainClick());
 
 		// TODO: Task 4 - Initialize game over sound audio
-		this.gameOverSound = new Audio(); // Placeholder
+		this.gameOverSound = new Audio('/gameover.mp3'); 
 	}
 
 	/**
@@ -51,6 +51,10 @@ export class ResultsScreenController extends ScreenController {
 		this.view.show();
 
 		// TODO: Task 4 - Play the game over sound
+		this.gameOverSound.currentTime = 0;
+		this.gameOverSound.play();
+		this.gameOverSound.currentTime = 0;
+
 	}
 
 	/**

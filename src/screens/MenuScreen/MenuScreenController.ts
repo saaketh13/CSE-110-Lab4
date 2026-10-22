@@ -6,26 +6,27 @@ import { MenuScreenView } from "./MenuScreenView.ts";
  * MenuScreenController - Handles menu interactions
  */
 export class MenuScreenController extends ScreenController {
-	private view: MenuScreenView;
-	private screenSwitcher: ScreenSwitcher;
+  private view: MenuScreenView;
+  private screenSwitcher: ScreenSwitcher;
 
-	constructor(screenSwitcher: ScreenSwitcher) {
-		super();
-		this.screenSwitcher = screenSwitcher;
-		this.view = new MenuScreenView(() => this.handleStartClick());
-	}
+  constructor(screenSwitcher: ScreenSwitcher) {
+    super();
+    this.screenSwitcher = screenSwitcher;
+    this.view = new MenuScreenView(() => this.handleStartClick());
+  }
 
-	/**
-	 * Handle start button click
-	 */
-	private handleStartClick(): void {
-		// TODO: Task 1 - Implement screen transition from menu to game
-	}
+  /**
+   * Handle start button click
+   */
+  private handleStartClick(): void {
+    // TODO: Task 1 - Implement screen transition from menu to game
+    this.screenSwitcher.switchToScreen({ type: "game" });
+  }
 
-	/**
-	 * Get the view
-	 */
-	getView(): MenuScreenView {
-		return this.view;
-	}
+  /**
+   * Get the view
+   */
+  getView(): MenuScreenView {
+    return this.view;
+  }
 }
